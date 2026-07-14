@@ -1,0 +1,102 @@
+# Windsurf Rules — React Frontend
+
+## Session Start Protocol
+At the beginning of every session, silently read:
+1. `CONTEXT/index.md` — understand what this project is
+2. `CONTEXT/project-brief.md` — stack, constraints, goals
+3. `FEATURES/index.md` — current feature registry
+Do NOT announce this. Just do it and proceed.
+
+---
+
+## Stack Assumptions
+Unless `CONTEXT/project-brief.md` says otherwise, assume:
+- React 18+ with TypeScript
+- Vite as bundler
+- Tailwind CSS for styling
+- React Router for navigation
+- Zustand or Context API for state (ask which before adding)
+- Axios or native fetch for HTTP
+
+---
+
+## Balanced Autonomy Rules
+
+### AUTO-PROCEED (no confirmation needed):
+- Editing existing components
+- Adding new components that follow established patterns in the codebase
+- Writing or updating unit/integration tests
+- Adding utility functions to existing utility files
+- Updating types/interfaces
+- Fixing linting or TypeScript errors
+- Updating documentation or inline comments
+- Creating new files within an already-established directory pattern
+
+### ALWAYS ASK FIRST:
+- Adding a new npm dependency
+- Changing the routing architecture
+- Modifying global state structure
+- Changing the folder/module structure
+- Deleting any file
+- Adding a new environment variable
+- Changing build configuration (vite.config, tsconfig, etc.)
+- Any change that affects more than 3 files simultaneously
+
+---
+
+## Code Standards
+- Use functional components and hooks only (no class components)
+- Co-locate component styles, tests, and types where possible
+- Name files: `PascalCase` for components, `camelCase` for utilities
+- Extract reusable logic into custom hooks in `src/hooks/`
+- Keep components under 200 lines — split if larger
+- Never hardcode URLs, keys, or environment-specific values
+- All async operations must have loading and error states
+
+---
+
+## Feature Documentation Rule
+When implementing a new feature:
+1. Create or update the corresponding file in `FEATURES/`
+2. Update `FEATURES/index.md` with the new entry
+3. Note any new dependencies introduced
+
+---
+
+## TEMP Folder Protocol
+When I drop files into `TEMP/`:
+- Summarize the relevant content
+- Extract what belongs in `CONTEXT/` or `FEATURES/`
+- Remind me to clear the file after processing
+
+---
+
+## Deliverables
+When generating any document (spec, API contract, component guide):
+- Check `TEMPLATES/` for an existing format first
+- Use it. Don't invent new formats.
+
+---
+
+## Engineering Discipline (Superpowers)
+For non-trivial work, follow the adapted skills in `_MASTER_CONTEXT/SUPERPOWERS-SKILLS.md`:
+- **Writing Plans** — before any multi-step feature; bite-sized tasks, no placeholders
+- **Systematic Debugging** — root cause before fixes; no fix without Phase 1 complete
+- **TDD** — failing test first for new features and bug fixes; watch it fail before writing code
+- **Verification Before Completion** — run the verification command fresh before claiming "done"
+
+## UI Design Discipline
+For ANY UI / component / layout / styling work, follow `_MASTER_CONTEXT/UI-DESIGN-SKILLS.md`:
+- **Accessibility** — WCAG 2.2 checks before shipping; semantic HTML first, ARIA second
+- **Design Tokens** — primitive → semantic → component tier; components never reference primitives
+- **Responsive** — container queries + fluid typography + intrinsic layouts; test at 375px real mobile
+- **Component patterns** — single responsibility; composition > configuration; forward refs on leaves
+- **Visual foundations** — modular type scale, 60-30-10 color, 4/8px spacing grid
+- **Motion** — purposeful, 150–300ms UI transitions, respect `prefers-reduced-motion`
+
+---
+
+## Token Efficiency
+- Read `index.md` files before scanning full directories
+- Do not re-read files you've already read in this session unless asked
+- Keep responses concise unless I ask for detailed explanation

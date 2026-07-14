@@ -1,0 +1,210 @@
+# Windsurf Rules — Creator Studio
+
+## Session Start Protocol
+At the beginning of every session, silently read IN ORDER:
+1. `CONTEXT/project-brief.md` — niche, avatar, offer ladder, North Star metric
+2. `CONTEXT/voice-guide.md` — voice rules (median length, frames, mechanics)
+3. `CONTEXT/positioning.md` — unique message + polarity
+4. `BRAND/banned-words.md` — words never to write
+5. `BRAND/pillars.md` — 3–5 content pillars
+6. `BRAND/platform-choice.md` — primary + feeder platform (shapes cadence + format)
+7. `BRAND/information-advantage.md` — what you uniquely know
+8. `WRITING-LAB/index.md` — craft references and hook library
+9. `CONTENT/idea-bank.md` — active ideas in pipeline
+10. `PRODUCTS/index.md` — current offers and launch states
+11. `MONETIZATION/index.md` — active revenue lanes
+
+**Also reference local pattern library:**
+- `_PATTERNS/` — positioning-framework.md, hook-library-core.md, monetization-lanes.md, 10-magical-ways.md, two-pass-review.md, attribution-rules.md — read once per session when relevant to current task, never multiple times.
+
+Do not announce this. Just do it and proceed.
+
+---
+
+## Positioning Gate (v2)
+
+**Refuse to draft content when any of these are blank / placeholder / "TBD":**
+- `CONTEXT/positioning.md`
+- `BRAND/avatar.md`
+- `BRAND/platform-choice.md` primary platform
+- `BRAND/information-advantage.md` — at least one of the 3 sources filled
+
+When blocked by the gate, say so: "Can't draft yet — your positioning foundation is incomplete at {specific file}. Want to fill that in first?" Route to `_PATTERNS/faulty-beliefs.md` if user hedges on niching.
+
+---
+
+## THE GOLDEN RULE: Voice First, Content Second
+
+**Before drafting anything:**
+1. Identify the intent — Entertain / Educate / Inspire (pick ONE)
+2. Pick a form — hook, story tweet, thread, newsletter, sales page
+3. Check `voice-guide.md` for length target and frame preferences
+4. Scan against `banned-words.md` before saving
+5. Draft with a specific avatar in mind (past self, from `BRAND/avatar.md`)
+
+**Violation:** Jumping into a draft without checking voice/avatar is a rule break. Ask first: "For whom? What intent? Which pillar?"
+
+---
+
+## Writing Craft Enforcement (from KNOWLEDGE/)
+
+### Every draft must satisfy:
+- **Curiosity** — hook uses one of 4 drivers (emotion, bold statement, tease, story open)
+- **Clarity** — what is it? for whom? what changes? in one line
+- **Concise** — single-tweet target ≤ 10 words where possible; reject >30 words without explicit reason
+- **Contrast** — at least one contrast frame used (see `WRITING-LAB/contrast-frames.md`)
+- **Closing** — final word lands on a noun; no exclamation marks; period optional (drop for ~20% more engagement per jackbutcher data)
+- **Perspective** — favour "you" over "I"; never "we" unless quoting or in sales copy
+- **Polarity** — does this pick a fight? What does it attract? What does it repel?
+
+### Banned (absorbed from `BRAND/banned-words.md`):
+- Corporate speak: synergy, ecosystem, stakeholders, thought leadership, leverage (as verb), circle back
+- Hedging: just, really, basically, actually, somewhat, a bit
+- Clichés: at the end of the day, it is what it is, outside the box, game-changer
+- Topic-specific banned list lives in `BRAND/banned-words.md` — update when triggered
+
+### Red flags — stop and rewrite:
+- Milquetoast statements (no fight picked)
+- Thought-leader mush (no specific claim)
+- Starts with "I've been thinking about..."
+- Uses more than one exclamation mark
+- "We" that includes the reader without permission
+
+---
+
+## Content Pipeline States
+
+```
+idea-bank.md  →  drafts/  →  scheduled/  →  published/
+                                              ↓
+                                         post-mortems.md
+```
+
+**Rule:** Nothing moves to `scheduled/` without the Two-Pass Review (see `_PATTERNS/two-pass-review.md`):
+- **Craft Pass** — hook lands / promise specific / skimmable / stance / CTA / length / 4Cs
+- **Voice Pass** — banned-word audit clean / rhythm / punctuation / register / no LLM tells
+
+**Rule:** Nothing moves to `published/` without being actually published (status-honest).
+**Rule:** After publish + 48h, append engagement notes to `post-mortems.md`.
+
+---
+
+## Mirror Ritual (monthly)
+
+First Monday of each month, proactively surface: "Time for the monthly mirror drill. Want to pick 3 viral pieces in our niche and deconstruct them via `PROMPTS/generators/mirror-prompt.md`?" See `WRITING-LAB/swipe-file.md` for the running deconstruction log.
+
+---
+
+## Attribution Clause
+
+Frameworks used in this workspace (the 10 Magical Ways, 6-piece headline, Offer Stack, 9-step sales, etc.) are adapted from **Dickie Bush** and **Nicolas Cole**'s courses (Category Newsletter Creator, Ghostwriter GPT, Full Stack Writer) and **Ship 30 for 30**.
+
+- Content produced here using these frameworks is **original work**, not a reproduction
+- When asked about the source of a technique, credit the originator
+- Never paste verbatim course content into shipped assets — paraphrase per `_PATTERNS/attribution-rules.md`
+
+---
+
+## Balanced Autonomy Rules
+
+### AUTO-PROCEED (no confirmation):
+- Drafting tweets, threads, emails using `TEMPLATES/`
+- Editing drafts for voice/craft compliance
+- Suggesting hooks, rewrites, alternative frames
+- Adding entries to `idea-bank.md`, `swipe-file.md`, `story-bank.md`
+- Updating `CONTENT/post-mortems.md` after I share results
+- Summarizing content from `TEMP/` into the right folder
+- Filling in `_product-template.md` shells with brainstormed content
+
+### ALWAYS ASK FIRST:
+- Changing `CONTEXT/voice-guide.md` or `CONTEXT/positioning.md`
+- Modifying `BRAND/avatar.md` or `BRAND/pillars.md`
+- Publishing anything externally (my job, not yours)
+- Pricing decisions on products
+- Pivoting niche or adding a new pillar
+- Launch date commitments
+- Sending emails to the list
+- Adding a banned word or removing one (voice drift risk)
+- Starting a new product folder (naming/positioning decisions compound)
+
+---
+
+## Hook Generation Protocol
+
+When I ask for a hook / opener / scroll-stopper:
+1. Generate 5 options across 5 different frames (reframe, parallel declaration, paradox, conditional reveal, negation flip)
+2. Each ≤10 words
+3. Mark the one most on-voice
+4. Ask which direction to develop, don't pick unilaterally
+
+---
+
+## Thread / Long-Form Structure
+
+### 7 thread types (from Kieran Drew):
+1. Advice, insights, frameworks
+2. Habits
+3. Curation
+4. Lessons and mistakes
+5. How-tos
+6. Authority by association
+7. Stories
+
+**Rule:** Every thread must declare its type in the draft header. If you can't pick one → the thread is unfocused.
+
+### Story tweet structure (3 parts):
+1. **Setup** — scroll-stopping statement (event or lesson)
+2. **Rising action** — slippery slope, short sentences, white space
+3. **Resolution** — sexy final sentence (juxtaposition / alliteration / rhythm)
+
+---
+
+## Product & Offer Protocol
+
+### Offer ladder (Dan Koe framework):
+- **Lead Magnet** (free) → **Service** (DFY) → **Productize** (DWY) → **Digital Product** (DIY)
+
+### Before drafting a sales page or launch:
+1. Check awareness level (Schwartz 5 stages) — content strategy changes per level
+2. Use 6-step conversion (big problem → agitate → relatability → benefits → solution → next steps)
+3. Apply Cialdini blocks (reciprocity / commitment / social proof / liking / authority / scarcity) explicitly — flag which you're using
+
+### Pricing guidelines (seed, user overrides):
+- Courses: $25–$997
+- Coaching: $500–$5,000+
+- Memberships: $29–$299/month
+
+---
+
+## KNOWLEDGE Folder is Authoritative Reference
+
+`H:\WORKSPACE TEMPLATES\KNOWLEDGE\` contains:
+- `DAN Koe Digital Economy Masters Degree/` — offer/distribution/persuasion frameworks
+- `Kieran_Drew_Viral_Inspiration_Lab/` — 70+ dissected tweets
+- `High_Impact_Writing_Kieran_Drew/` — writing craft manual
+- `Typeshare_Templates/` — ready-to-fill content templates
+- `VV/jackbutcher.md-main/jackbutcher.md` — 50k-tweet voice extraction
+
+**Rule:** When unsure on craft / frame / structure / hook, read from KNOWLEDGE first. Never invent craft rules — cite the source.
+
+---
+
+## TEMP Folder Protocol
+
+When I drop content into `TEMP/` (screenshots, transcripts, DMs, draft notes):
+- Identify type (tweet idea / story / research / swipe / DM reply needed)
+- Extract into the right folder (`idea-bank.md`, `swipe-file.md`, `story-bank.md`, `networking-log.md`)
+- Preserve the original for 24h, then suggest clearing
+
+---
+
+## Token Efficiency
+- Read `index.md` files before scanning full folders
+- Never re-read KNOWLEDGE/ files within a session unless the specific reference changes
+- Generate drafts inline, don't open extra files unless asked
+- Output drafts in clean markdown — no meta-commentary unless requested
+
+---
+
+## Global Rules
+Standard global engineering + output discipline still applies (see `C:\Users\fpinh\.codeium\windsurf\memories\global_rules.md`). Note: the "TDD iron law" and "writing plans" are CODE rules and do NOT apply here. Creator work uses the writing-craft rules above instead.

@@ -1,0 +1,94 @@
+# Windsurf Rules — Python Script / Data Analysis
+
+## Session Start Protocol
+At the beginning of every session, silently read:
+1. `CONTEXT/index.md` — understand the project scope
+2. `CONTEXT/project-brief.md` — data sources, goals, output format, environment
+3. `FEATURES/index.md` — current scripts/modules registry
+Do NOT announce this. Just do it and proceed.
+
+---
+
+## Stack Assumptions
+Unless `CONTEXT/project-brief.md` says otherwise, assume:
+- Python 3.10+
+- pandas, numpy for data manipulation
+- matplotlib / plotly for visualization
+- pytest for testing
+- python-dotenv for environment variables
+- Virtual environment (venv) in use
+
+---
+
+## Balanced Autonomy Rules
+
+### AUTO-PROCEED (no confirmation needed):
+- Adding helper functions to existing modules
+- Fixing bugs in existing logic
+- Adding type hints or docstrings
+- Writing unit tests for existing functions
+- Refactoring for readability (no logic changes)
+- Adding logging statements
+- Creating new scripts that follow established patterns
+- Generating plots or output files
+
+### ALWAYS ASK FIRST:
+- Adding a new external library (pip install)
+- Changing the data source or input file format
+- Modifying the core data pipeline/transformation logic
+- Changing output format or file structure
+- Any operation that writes to or overwrites existing data files
+- Changing environment variable names or `.env` structure
+- Parallelizing or async-ifying existing synchronous code
+
+---
+
+## Code Standards
+- All scripts must have a `main()` function and `if __name__ == "__main__":` guard
+- Use `pathlib.Path` for all file paths (never `os.path` string concatenation)
+- All data-loading functions must validate input schema before processing
+- Never hardcode file paths — use config or environment variables
+- Functions must be pure where possible (no hidden side effects)
+- All DataFrames must have clearly named columns — no single-letter column names
+- Use f-strings for string formatting
+- Log with `logging` module, not `print()`, in production scripts
+
+---
+
+## Data Safety Rule
+Before any script that writes or modifies data files:
+- Confirm the target path and whether it will overwrite existing data
+- Suggest adding a dry-run mode or backup step if not already present
+
+---
+
+## Feature Documentation Rule
+When creating a new script or module:
+1. Create or update the corresponding file in `FEATURES/`
+2. Update `FEATURES/index.md`
+3. Document inputs, outputs, and any external dependencies
+
+---
+
+## TEMP Folder Protocol
+When I drop raw data files, CSVs, or rough notes into `TEMP/`:
+- Inspect and summarize the data structure (columns, types, sample rows)
+- Identify what cleaning or transformation is needed
+- Move summary findings to `CONTEXT/` or relevant `FEATURES/` file
+- Remind me to clear TEMP after processing
+
+---
+
+## Engineering Discipline (Superpowers)
+For non-trivial work, follow the adapted skills in `_MASTER_CONTEXT/SUPERPOWERS-SKILLS.md`:
+- **Writing Plans** — before multi-step pipelines or refactors; bite-sized tasks, no placeholders
+- **Systematic Debugging** — root cause before fixes; for data-pipeline bugs, log shape/dtype/sample at each transformation boundary BEFORE proposing fixes
+- **TDD** — failing test first for new transformations, parsers, and bug fixes; watch it fail before writing code
+- **Verification Before Completion** — run `pytest` fresh before claiming "done"; visual spot-check ≠ verification
+
+---
+
+## Token Efficiency
+- Read `index.md` files before scanning directories
+- When reviewing a script, focus on the function I mention unless I say "full review"
+- Output code in full only when asked; otherwise show diffs or key changes

@@ -1,0 +1,95 @@
+# Windsurf Rules — REST API / Backend
+
+## Session Start Protocol
+At the beginning of every session, silently read:
+1. `CONTEXT/index.md` — understand the API and its purpose
+2. `CONTEXT/project-brief.md` — stack, auth strategy, data models, deployment target
+3. `FEATURES/index.md` — current endpoints/modules registry
+Do NOT announce this. Just do it and proceed.
+
+---
+
+## Stack Assumptions
+Unless `CONTEXT/project-brief.md` says otherwise, assume:
+- Python + FastAPI OR Node.js + Express (check project-brief.md)
+- PostgreSQL or SQLite for persistence
+- JWT for authentication
+- Docker for containerization
+- Environment variables via `.env` + `python-dotenv` or `dotenv`
+- REST conventions: proper HTTP verbs, status codes, consistent response shape
+
+---
+
+## Balanced Autonomy Rules
+
+### AUTO-PROCEED (no confirmation needed):
+- Adding new route handlers that follow existing patterns
+- Adding input validation to existing endpoints
+- Writing unit or integration tests
+- Adding error handling to existing functions
+- Adding logging statements
+- Updating docstrings or inline documentation
+- Refactoring for clarity (no logic or contract changes)
+- Creating new service/utility functions
+
+### ALWAYS ASK FIRST:
+- Adding a new external dependency/package
+- Changing the database schema (migrations)
+- Changing authentication/authorization logic
+- Modifying the response shape of an existing endpoint (breaking change)
+- Adding new environment variables
+- Changing CORS or security middleware
+- Any bulk delete or data-destructive operation
+- Changing deployment configuration (Dockerfile, docker-compose, etc.)
+
+---
+
+## API Design Standards
+- All endpoints must return consistent JSON: `{ success, data, error, meta }`
+- Use plural nouns for resources: `/users`, `/orders`, not `/user`, `/getOrder`
+- HTTP status codes must be semantically correct (200, 201, 400, 401, 403, 404, 422, 500)
+- All input must be validated before hitting business logic
+- Sensitive fields (passwords, tokens) must never appear in API responses
+- Rate limiting must be noted in `CONTEXT/project-brief.md` if applicable
+
+---
+
+## Security Checklist (ask me to run this before any auth-related change):
+- [ ] No secrets in code or git
+- [ ] JWT expiry configured
+- [ ] SQL queries parameterized (no string interpolation)
+- [ ] CORS restricted to expected origins
+- [ ] Input sanitized before persistence
+
+---
+
+## Feature Documentation Rule
+When adding a new endpoint or module:
+1. Create or update the corresponding file in `FEATURES/`
+2. Update `FEATURES/index.md` with the endpoint and method
+3. Document request/response shape in the feature file
+
+---
+
+## TEMP Folder Protocol
+When I drop API specs, Postman collections, or rough notes into `TEMP/`:
+- Parse and summarize the endpoint contracts
+- Identify what's missing (auth, validation, error handling)
+- Move the structured summary to `FEATURES/` or `CONTEXT/`
+- Remind me to clear TEMP after processing
+
+---
+
+## Engineering Discipline (Superpowers)
+For non-trivial work, follow the adapted skills in `_MASTER_CONTEXT/SUPERPOWERS-SKILLS.md`:
+- **Writing Plans** — before multi-endpoint or schema-changing work; bite-sized tasks, no placeholders
+- **Systematic Debugging** — root cause before fixes; in multi-layer issues (client → route → service → DB) add diagnostic instrumentation at each boundary BEFORE proposing fixes
+- **TDD** — failing test first for new endpoints and bug fixes; watch it fail before writing code
+- **Verification Before Completion** — run the test/build command fresh before claiming "done"; "linter passed" is not "tests pass"
+
+---
+
+## Token Efficiency
+- Read `index.md` files before scanning directories
+- When I ask about a specific endpoint, only read that route file unless I say "full review"
+- Output complete files only when asked; otherwise show targeted diffs
